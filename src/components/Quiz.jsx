@@ -1,7 +1,7 @@
 import React from "react";
 
 const Quiz = ({ quizdata, currQuestion, handleAns, selectedOption, handleNext }) => {
-  console.log("seleted= >", selectedOption);
+  const quest = quizdata[currQuestion]
   return (
     <div className="quiz">
       <div className="header">
@@ -10,17 +10,17 @@ const Quiz = ({ quizdata, currQuestion, handleAns, selectedOption, handleNext })
       <div className="quiz-body">
         <h3>
           {" "}
-          {currQuestion + 1}.{quizdata[currQuestion].question}
+          {currQuestion + 1}.{quest.question}
         </h3>
         <div className="options-sec">
-          {quizdata[currQuestion].options.map((option, index) => (
+          {quest.options.map((option, index) => (
             < >
               <button 
                 className={`
                             option-btn
                             ${
                               selectedOption
-                                ? option === quizdata[currQuestion].answer
+                                ? option === quest.answer
                                   ? "correct"
                                   : option === selectedOption
                                   ? "incorrect"
