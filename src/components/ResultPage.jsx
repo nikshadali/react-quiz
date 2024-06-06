@@ -6,7 +6,7 @@ const ResultPage = ({score, quizdata, handleAgain}) => {
       <h1 className='result-title'>{score > 20 ? 'Congratulation' : 'Best of Luck'}</h1>
       <div className="score">
         <span className='getScore'>{score}</span>
-        <span className='totalScore'>{quizdata.length * 10 }</span>
+        <span className='totalScore'> of {quizdata.length * 10 }</span>
         </div>
         <button className='btn-start btn-res' onClick={handleAgain}>Try Again</button>
     </div>
